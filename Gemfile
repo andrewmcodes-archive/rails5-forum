@@ -33,6 +33,11 @@ gem 'material_icons'
 gem 'oink'
 # Simple Rails app configuration (https://github.com/laserlemon/figaro)
 gem 'figaro'
+# A generalized Rack framework for multiple-provider authentication. (https://github.com/omniauth/omniauth)
+gem 'omniauth'
+# OmniAuth strategy for Twitter (https://github.com/arunagw/omniauth-twitter)
+gem 'omniauth-twitter'
+
 group :development, :test do
   # Ruby fast debugger - base + CLI (http://github.com/deivid-rodriguez/byebug)
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -40,6 +45,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   # The next generation developer focused tool for automated testing of webapps (https://github.com/seleniumhq/selenium)
   gem 'selenium-webdriver'
+  # Use Pry as your rails console (https://github.com/rweng/pry-rails)
+  gem 'pry-rails'
 end
 
 group :development do
