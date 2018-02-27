@@ -20,8 +20,8 @@
     <%= form.label :content %>
     <%= form.text_area :content, id: :discussion_content %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save Discussion', class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>
