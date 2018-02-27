@@ -16,14 +16,17 @@
       <tr>
         <td><%= discussion.headline %></td>
         <td><%= discussion.content %></td>
-        <td><%= link_to 'Show', discussion %></td>
-        <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
-        <td><%= link_to 'Destroy', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', discussion %></td>
+        <% if user_logged_in? && current_user.owns_discussion?(discussion) %>
+          <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
+          <td><%= link_to 'Destroy', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Discussion', new_discussion_path, class: 'waves-effect waves-light btn' %>
+<% if user_logged_in? %>
+  <br>
+  <%= link_to 'New Discussion', new_discussion_path, class: 'waves-effect waves-light btn' %>
+<% end %>

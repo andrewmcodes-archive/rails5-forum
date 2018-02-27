@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227152430) do
+ActiveRecord::Schema.define(version: 20180227171006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,23 @@ ActiveRecord::Schema.define(version: 20180227152430) do
   create_table "discussions", force: :cascade do |t|
     t.string "headline"
     t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_discussions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "nickname"
+    t.string "name"
+    t.string "email"
+    t.string "location"
+    t.string "image_url"
+    t.text "description"
+    t.string "token"
+    t.string "secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

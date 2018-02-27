@@ -1,0 +1,44 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id          :integer          not null, primary key
+#  provider    :string
+#  uid         :string
+#  nickname    :string
+#  name        :string
+#  email       :string
+#  location    :string
+#  image_url   :string
+#  description :text
+#  token       :string
+#  secret      :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  provider: MyString
+  uid: MyString
+  nickname: MyString
+  name: MyString
+  email: MyString
+  location: MyString
+  image_url: MyString
+  description: MyText
+  token: MyString
+  secret: MyString
+
+two:
+  provider: MyString
+  uid: MyString
+  nickname: MyString
+  name: MyString
+  email: MyString
+  location: MyString
+  image_url: MyString
+  description: MyText
+  token: MyString
+  secret: MyString
